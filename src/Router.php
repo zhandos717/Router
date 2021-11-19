@@ -1,6 +1,5 @@
 <?php
 class Router{
-
     protected $routers= [];
     protected $route= [];
     protected  $page404 ='';
@@ -42,11 +41,9 @@ class Router{
         }
         return false;
     }
-
     public function run(){
         if ($this->match()) {
             if (file_exists($this->route['file'])) {
-                var_dump($this->route);
                     include $this->route['file'];
             } else {
                 $eror = 'Нет такого файла';
