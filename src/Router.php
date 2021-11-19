@@ -3,15 +3,10 @@ class Router{
     protected $routers= [];
     protected $route= [];
     protected  $page404 ='';
-    /**
-     * Discriptions: Adding a route
-     * @param string url 
-     * @param string controller 
-     * @param string action 
-     */
-    public function setPage404(string $page404)
+
+    public function __construct(string $page404)
     {
-        $this->page404 =$page404; 
+        $this->page404 = $page404; 
     }
     /**
      * Discriptions: Adding a route
@@ -44,6 +39,7 @@ class Router{
     public function run(){
         if ($this->match()) {
             if (file_exists($this->route['file'])) {
+                    var_dump($this->route);
                     include $this->route['file'];
             } else {
                 $eror = 'Нет такого файла';
