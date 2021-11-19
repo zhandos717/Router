@@ -33,7 +33,7 @@
 ```HTML
 <a href='/post/1'> POST 1 </a>
 ```
-#### Usage:
+#### Output:
 #### id will be in the array route
 ```php
 <?php
